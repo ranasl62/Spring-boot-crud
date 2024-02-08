@@ -1,0 +1,25 @@
+# PostgreSQL DataSource Configuration
+spring:
+  datasource:
+    url: jdbc:postgresql://0.0.0.0:5432/crud-db?currentSchema=public
+    username: postgres
+    password: 6262
+
+  # Hibernate properties
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        default_schema: public
+    hibernate:
+      ddl-auto: create
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+logging:
+  level:
+    org.flywaydb: DEBUG
+    # Additional configuration (if needed)
+    # locations: classpath:db/migration
+    # baseline-on-migrate: true
